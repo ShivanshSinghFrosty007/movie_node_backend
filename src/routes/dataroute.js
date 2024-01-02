@@ -1,5 +1,6 @@
 const espress = require('express');
 const router = espress.Router();
+const http = require('https'); // or 'https' for https:// URLs
 
 const fs = require("fs");
 
@@ -45,17 +46,16 @@ router.get('/:key/image/:name', async function (req, res) {
     if (!authenticate(req.params.key, res)) {
         return;
     }
-    const baseAddr = "D:\\node project\\flutterBackend\\src\\data\\images\\";
+    const baseAddr = "https://raw.githubusercontent.com/ShivanshSinghFrosty007/movie_node_backend/main/src/data/images/";
     const path = baseAddr + req.params.name;
 
-    fs.readFile(path, (err, data) => {
+    const request = http.get(path, function (response) {
         res.writeHead(200, {
             "Access-Control-Allow-Origin": "*",
             'Accept': '*/*',
             "Content-Type": "image/jpg",
         });
-        res.write(data);
-        res.end();
+        response.pipe(res);
     });
     console.log('image get');
 });
