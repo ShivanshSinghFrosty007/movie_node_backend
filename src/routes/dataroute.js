@@ -16,7 +16,7 @@ router.get("/:key/video/:name", async function (req, res) {
     const baseAddr = "https://raw.githubusercontent.com/ShivanshSinghFrosty007/movie_node_backend/main/src/data/videos/";
     const path = baseAddr + req.params.name;
     
-    const request = http.get(baseAddr, function (response) {
+    const request = http.get(path, function (response) {
         res.writeHead(200, { "Content-Type": "video/mp4" });
         response.pipe(res);
     });
