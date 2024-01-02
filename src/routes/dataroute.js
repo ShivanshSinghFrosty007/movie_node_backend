@@ -13,32 +13,14 @@ router.get("/:key/video/:name", async function (req, res) {
     if (!authenticate(req.params.key, res)) {
         return;
     }
-    const baseAddr = "D:\\node project\\flutterBackend\\src\\data\\videos\\";
+    const baseAddr = "https://raw.githubusercontent.com/ShivanshSinghFrosty007/movie_node_backend/main/src/data/videos/";
     const path = baseAddr + req.params.name;
-    const videoSize = fs.statSync(path).size;
+    
+    const request = http.get(baseAddr, function (response) {
+        res.writeHead(200, { "Content-Type": "video/mp4" });
+        response.pipe(res);
+    });
 
-    const range = req.headers.range;
-    if (range) {
-        const CHUNK_SIZE = 20 ** 6; // 1MB
-        const start = Number(range.replace(/\D/g, ""));
-        const end = Math.min(start + CHUNK_SIZE, videoSize - 1);
-        const contentLength = end - start + 1;
-        const headers = {
-            "Content-Range": `bytes ${start}-${end}/${videoSize}`,
-            "Accept-Ranges": "bytes",
-            "Content-Length": contentLength,
-            "Content-Type": "video/m3u8",
-        };
-        res.writeHead(206, headers);
-        const videoStream = fs.createReadStream(path, { start, end });
-        videoStream.pipe(res);
-    } else {
-        fs.readFile(path, (err, data) => {
-            res.writeHead(200, { "Content-Type": "video/mp4", "content-length": videoSize });
-            res.write(data);
-            res.end();
-        });
-    }
     console.log('video get');
 });
 
