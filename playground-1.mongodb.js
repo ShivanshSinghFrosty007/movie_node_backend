@@ -31,6 +31,12 @@ db.getCollection('movie').insertOne({
             "image": "yourname.jpg",
             "link": "sparkle.mp4",
         },
+        {
+            "name": "Tribute",
+            "desc": "Immerse yourself in the timeless allure of anime with 'Ephemeral Echoes,' a heartfelt tribute celebrating the vibrant characters and captivating narratives that have etched indelible memories in the hearts of fans, transcending the boundaries of reality and imagination.",
+            "image": "tribute.jpg",
+            "link": "tribute.mp4",
+        },
     ]
 
 
