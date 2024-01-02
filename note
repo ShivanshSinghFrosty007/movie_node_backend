@@ -1,0 +1,197 @@
+/* global use, db */
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+// The result of the last command run in a playground is shown on the results panel.
+// By default the first 20 documents will be returned with a cursor.
+// Use 'console.log()' to print to the debug output.
+// For more documentation on playgrounds please refer to
+// https://www.mongodb.com/docs/mongodb-vscode/playgrounds/
+
+// Select the database to use.
+use('songdb');
+
+// Insert a few documents into the sales collection.
+db.getCollection('songs').insertMany([
+  {
+    "popular": [{
+      "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/lose%20control%2Flose%20control%20img.jpg?alt=media&token=c8f78dcf-21ec-4767-bbf5-5d5096f3e4b4",
+      "name": "Lose Control",
+      "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/lose%20control%2F%5BMP3DOWNLOAD.TO%5D%20MEDUZA%2C%20Becky%20Hill%2C%20Goodboys%20-%20Lose%20Control%20(Lyric%20Video)-320k.mp3?alt=media&token=f4b5296a-3224-4109-adab-a3bc436d0e47"
+    },
+    {
+      "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/often%2Foften%20img.jpg?alt=media&token=8fcab88c-e206-4bb3-ab34-f7036f1d2229",
+      "name": "often",
+      "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/often%2F%5BMP3DOWNLOAD.TO%5D%20The%20Weeknd%20-%20Often%20(Kygo%20Remix)%20(Slowed)%20(Lyrics)%20she%20asked%20me%20if%20i%20do%20this%20everyday%20i%20said%20often-320k.mp3?alt=media&token=9112f081-4196-4d56-af96-a63020a41cab"
+    },
+    {
+      "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/runaway%2FAuroraRunaway%20img.png?alt=media&token=b31043b0-97bf-43dd-9bc9-7df1ab259408",
+      "name": "Runaway",
+      "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/runaway%2F%5BMP3DOWNLOAD.TO%5D%20AURORA%20-%20Runaway-320k.mp3?alt=media&token=79d5ce06-2724-4e9d-a690-4c5754bf061f"
+    },
+    {
+      "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/lovely%2Flovely%20img.jpg?alt=media&token=ec5a12ff-c66e-4fa8-854e-8f43ca2826cc",
+      "name": "lovely",
+      "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/lovely%2F%5BMP3DOWNLOAD.TO%5D%20Billie%20Eilish%2C%20Khalid%20-%20lovely-320k.mp3?alt=media&token=985d3d35-1831-4e25-aa28-9c37dcd47b59"
+    },
+    {
+      "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/she%20dont%20know%2FShe_Don't_Know%20img.jpeg?alt=media&token=4ce666aa-5145-4890-8c47-f874a9d6ef69",
+      "name": "She don't know",
+      "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/she%20dont%20know%2FShe%20Dont%20Know%20-%20Millind%20Gaba.mp3?alt=media&token=e26b27e1-1c78-4b10-8706-ce7ba9c7a498"
+    }
+    ]
+  },
+  {
+    "recommend": [
+      {
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/hymn%20for%20the%20weekend%2Fhymm%20for%20the%20weekend%20img.jpg?alt=media&token=7bcf2541-3ee7-43c6-b932-2b59db825640",
+        "name": "Hymn for the weekend",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/hymn%20for%20the%20weekend%2F%5BMP3DOWNLOAD.TO%5D%20Coldplay%20-%20Hymn%20For%20The%20Weekend%20(Official%20Video)-320k.mp3?alt=media&token=cdbea493-36d9-4f00-a76a-f50ca42cdf1a"
+      },
+      {
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/shape%20of%20you%2FShape_Of_You.png?alt=media&token=d0c55c05-0a8b-403e-994b-65416091e3f5",
+        "name": "Shape of you",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/shape%20of%20you%2FShape%20of%20You%20-%20Ed%20Sheeran_320-%20%5BMyMp3Bhojpuri.In%5D.mp3?alt=media&token=c6caa5c1-60a8-4e6f-b36d-d3e605926268"
+      },
+      {
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/see%20you%20again%2Fsee%20you%20again.jpg?alt=media&token=087df708-bd40-4a7b-b008-fc9377fa28cb",
+        "name": "See you again",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/see%20you%20again%2FSee-You-Again_320(PaglaSongs).mp3?alt=media&token=1bcecc5b-54ce-406a-8848-d6f0d4a34a3d"
+      },
+      {
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/industry%20baby%2Findustry%20baby%20img.jpg?alt=media&token=2a6fc5a3-5647-44a9-b4af-990568eb6df9",
+        "name": "Industry baby",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/industry%20baby%2F%5BWaploaded_4815%5DLil_Nas_X_Ft_Jack_Harlow__Industry_Baby.mp3?alt=media&token=cdc7ba44-5949-4548-aa85-ebf13ac24f74"
+      },
+      {
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/daed%20to%20me%2FDead-to-Me-English-2018-20180410151724-500x500.jpg?alt=media&token=06509855-4347-4e61-9b28-6b12dbb54792",
+        "name": "dead to me",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/daed%20to%20me%2F%5BMP3DOWNLOAD.TO%5D%20Sex%20Whales%20%26%20Fraxo%20-%20Dead%20To%20Me%20(feat.%20Lox%20Chatterbox)-320k.mp3?alt=media&token=f201ce59-3dcb-4ed1-bda0-c32360cdd625"
+      }
+    ]
+  },
+  {
+    "search": [
+      {
+        "id": "0",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/goosebumps%2Fgoosebumps.jpg?alt=media&token=5dd26274-e40f-4709-a5cd-1d3a3d64d1c5",
+        "name": "Goosebumps",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/goosebumps%2F%5BMP3DOWNLOAD.TO%5D%20HVME%20%20%20GOOSEBUMPS%20Extended%20Remix-320k.mp3?alt=media&token=464c83f8-8a70-41d2-9d99-e81418b9c6ee"
+      },
+      {
+        "id": "1",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/daed%20to%20me%2FDead-to-Me-English-2018-20180410151724-500x500.jpg?alt=media&token=06509855-4347-4e61-9b28-6b12dbb54792",
+        "name": "Dead to me",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/daed%20to%20me%2F%5BMP3DOWNLOAD.TO%5D%20Sex%20Whales%20%26%20Fraxo%20-%20Dead%20To%20Me%20(feat.%20Lox%20Chatterbox)-320k.mp3?alt=media&token=f201ce59-3dcb-4ed1-bda0-c32360cdd625"
+      },
+      {
+        "id": "2",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/Shinitai%20Chan%2FShinitai%20Chan%20img.jpg?alt=media&token=15511075-cd70-4f38-82a0-d88e5cebd8d3",
+        "name": "Shinitai Chan",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/Shinitai%20Chan%2FShinitai%20Chan.mp4?alt=media&token=c0e2c8b5-10b0-4b6a-82db-05c1a5a8ae90"
+      },
+      {
+        "id": "3",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/here%2FHERE.png?alt=media&token=eeb64957-d007-4dd4-80ad-09060cb0181a",
+        "name": "Here",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/here%2F%5BMP3DOWNLOAD.TO%5D%20Alessia%20Cara%20-%20Here%20(Lucian%20Remix)-320k.mp3?alt=media&token=1e8de095-4d39-443d-827b-d5fc86aaeaaa"
+      },
+      {
+        "id": "4",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/lose%20control%2Flose%20control%20img.jpg?alt=media&token=c8f78dcf-21ec-4767-bbf5-5d5096f3e4b4",
+        "name": "Lose Control",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/lose%20control%2F%5BMP3DOWNLOAD.TO%5D%20MEDUZA%2C%20Becky%20Hill%2C%20Goodboys%20-%20Lose%20Control%20(Lyric%20Video)-320k.mp3?alt=media&token=f4b5296a-3224-4109-adab-a3bc436d0e47"
+      },
+      {
+        "id": "5",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/often%2Foften%20img.jpg?alt=media&token=8fcab88c-e206-4bb3-ab34-f7036f1d2229",
+        "name": "Often",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/often%2F%5BMP3DOWNLOAD.TO%5D%20The%20Weeknd%20-%20Often%20(Kygo%20Remix)%20(Slowed)%20(Lyrics)%20she%20asked%20me%20if%20i%20do%20this%20everyday%20i%20said%20often-320k.mp3?alt=media&token=9112f081-4196-4d56-af96-a63020a41cab"
+      },
+      {
+        "id": "6",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/runaway%2FAuroraRunaway%20img.png?alt=media&token=b31043b0-97bf-43dd-9bc9-7df1ab259408",
+        "name": "Runaway",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/runaway%2F%5BMP3DOWNLOAD.TO%5D%20AURORA%20-%20Runaway-320k.mp3?alt=media&token=79d5ce06-2724-4e9d-a690-4c5754bf061f"
+      },
+      {
+        "id": "7",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/lovely%2Flovely%20img.jpg?alt=media&token=ec5a12ff-c66e-4fa8-854e-8f43ca2826cc",
+        "name": "Lovely",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/lovely%2F%5BMP3DOWNLOAD.TO%5D%20Billie%20Eilish%2C%20Khalid%20-%20lovely-320k.mp3?alt=media&token=985d3d35-1831-4e25-aa28-9c37dcd47b59"
+      },
+      {
+        "id": "8",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/hymn%20for%20the%20weekend%2Fhymm%20for%20the%20weekend%20img.jpg?alt=media&token=7bcf2541-3ee7-43c6-b932-2b59db825640",
+        "name": "Hymn for the weekend",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/hymn%20for%20the%20weekend%2F%5BMP3DOWNLOAD.TO%5D%20Coldplay%20-%20Hymn%20For%20The%20Weekend%20(Official%20Video)-320k.mp3?alt=media&token=cdbea493-36d9-4f00-a76a-f50ca42cdf1a"
+      },
+      {
+        "id": "9",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/shape%20of%20you%2FShape_Of_You.png?alt=media&token=d0c55c05-0a8b-403e-994b-65416091e3f5",
+        "name": "Shape of you",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/shape%20of%20you%2FShape%20of%20You%20-%20Ed%20Sheeran_320-%20%5BMyMp3Bhojpuri.In%5D.mp3?alt=media&token=c6caa5c1-60a8-4e6f-b36d-d3e605926268"
+      },
+      {
+        "id": "10",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/see%20you%20again%2Fsee%20you%20again.jpg?alt=media&token=087df708-bd40-4a7b-b008-fc9377fa28cb",
+        "name": "See you again",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/see%20you%20again%2FSee-You-Again_320(PaglaSongs).mp3?alt=media&token=1bcecc5b-54ce-406a-8848-d6f0d4a34a3d"
+      },
+      {
+        "id": "11",
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/industry%20baby%2Findustry%20baby%20img.jpg?alt=media&token=2a6fc5a3-5647-44a9-b4af-990568eb6df9",
+        "name": "Industry baby",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/industry%20baby%2F%5BWaploaded_4815%5DLil_Nas_X_Ft_Jack_Harlow__Industry_Baby.mp3?alt=media&token=cdc7ba44-5949-4548-aa85-ebf13ac24f74"
+      }
+    ]
+  },
+  {
+    "trending": [
+      {
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/goosebumps%2Fgoosebumps.jpg?alt=media&token=5dd26274-e40f-4709-a5cd-1d3a3d64d1c5",
+        "name": "Goosebumps",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/goosebumps%2F%5BMP3DOWNLOAD.TO%5D%20HVME%20%20%20GOOSEBUMPS%20Extended%20Remix-320k.mp3?alt=media&token=464c83f8-8a70-41d2-9d99-e81418b9c6ee"
+      },
+      {
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/hills%2Fhills.jpg?alt=media&token=f5f54dc3-6680-489d-bfba-cdfd95478f65",
+        "name": "The Weeknd - The Hills",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/hills%2F%5BMP3DOWNLOAD.TO%5D%20The%20Weeknd%20-%20The%20Hills%20(Official%20Video)-320k.mp3?alt=media&token=f9aa21f8-5417-4cbf-909d-35f74ddf84cb"
+      },
+      {
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/Shinitai%20Chan%2FShinitai%20Chan%20img.jpg?alt=media&token=15511075-cd70-4f38-82a0-d88e5cebd8d3",
+        "name": "Shinitai Chan",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/Shinitai%20Chan%2FShinitai%20Chan.mp4?alt=media&token=c0e2c8b5-10b0-4b6a-82db-05c1a5a8ae90"
+      },
+      {
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/here%2FHERE.png?alt=media&token=eeb64957-d007-4dd4-80ad-09060cb0181a",
+        "name": "Here",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/here%2F%5BMP3DOWNLOAD.TO%5D%20Alessia%20Cara%20-%20Here%20(Lucian%20Remix)-320k.mp3?alt=media&token=1e8de095-4d39-443d-827b-d5fc86aaeaaa"
+      },
+      {
+        "image": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/fairytale%2FAlexander_fairytale%20img.jpg?alt=media&token=16db935a-0de6-4f26-b514-f653bd03425f",
+        "name": "Fairytale",
+        "song": "https://firebasestorage.googleapis.com/v0/b/listen-up-fa893.appspot.com/o/fairytale%2F%5BMP3DOWNLOAD.TO%5D%20Alexander%20Rybak%20%E2%80%93%20Fairytale%20(LYRICS)-320k.mp3?alt=media&token=ebde182e-5950-4cfa-a801-a124247502a7"
+      }
+    ]
+  }
+]);
+
+// Run a find command to view items sold on April 4th, 2014.
+// const salesOnApril4th = db.getCollection('sales').find({
+//   date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') }
+// }).count();
+
+// // Print a message to the output window.
+// console.log(`${salesOnApril4th} sales occurred in 2014.`);
+
+// Here we run an aggregation and open a cursor to the results.
+// Use '.toArray()' to exhaust the cursor to return the whole result set.
+// You can use '.hasNext()/.next()' to iterate through the cursor page by page.
+// db.getCollection('sales').aggregate([
+//   // Find all of the sales that occurred in 2014.
+//   { $match: { date: { $gte: new Date('2014-01-01'), $lt: new Date('2015-01-01') } } },
+//   // Group the total sales for each product.
+//   { $group: { _id: '$item', totalSaleAmount: { $sum: { $multiply: [ '$price', '$quantity' ] } } } }
+// ]);
