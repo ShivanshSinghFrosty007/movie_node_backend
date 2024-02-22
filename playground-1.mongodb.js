@@ -14,8 +14,6 @@ use('moviedb');
 
 // Insert a few documents into the sales collection.
 db.getCollection('movie').insertOne({
-
-
     "movieData": [
         { "name": "Halo", "desc": "Halo is set in the twenty-sixth century, with the player assuming the role of the Master Chief, a cybernetically enhanced supersoldier. The Chief is accompanied by Cortana, an artificial intelligence. Players battle aliens as they attempt to uncover the secrets of the eponymous Halo, a ring-shaped artificial world.", "image": "halo.jpg", "link": "halo.mp4" },
         { "name": "Demon Slayer", "desc": "Tanjiro sets out to become a demon slayer to avenge his family and cure his sister.A family is attacked by demons and only two members survive - Tanjiro and his sister Nezuko, who is turning into a demon slowly. Tanjiro sets out to become a demon slayer to avenge his family and cure his sister.", "image": "demonslyer.jpg", "link": "demonslyer.mp4" },
