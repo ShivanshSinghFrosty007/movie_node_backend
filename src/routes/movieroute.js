@@ -1,12 +1,14 @@
 const espress = require('express');
+const dotenv = require('dotenv');
+dotenv.config();
 const router = espress.Router();
 
 const { MongoClient, ObjectId } = require('mongodb');
-const client = new MongoClient("mongodb+srv://FrostyNodeApp:qwerty123@cluster0.cjsivdu.mongodb.net/?retryWrites=true&w=majority");
+
+const url = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.cjsivdu.mongodb.net/?retryWrites=true&w=majority`;
+const client = new MongoClient(url);
 
 const authenticate = require('../auth/authKey');
-
-const key = "qwerty123";
 
 router.get("/:key/data", async function (req, res) {
     if (!authenticate(req.params.key, res)) {

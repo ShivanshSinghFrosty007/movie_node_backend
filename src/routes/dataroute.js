@@ -1,11 +1,11 @@
 const espress = require('express');
 const router = espress.Router();
 const http = require('https'); // or 'https' for https:// URLs
-
-const fs = require("fs");
+const dotenv = require('dotenv');
+dotenv.config();
 
 const { MongoClient, ObjectId } = require('mongodb');
-const client = new MongoClient("mongodb+srv://FrostyNodeApp:qwerty123@cluster0.cjsivdu.mongodb.net/?retryWrites=true&w=majority");
+const url = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.cjsivdu.mongodb.net/?retryWrites=true&w=majority`;
 
 const authenticate = require('../auth/authKey');
 
@@ -15,7 +15,7 @@ router.get("/:key/video/:name", async function (req, res) {
     }
     const baseAddr = "https://raw.githubusercontent.com/ShivanshSinghFrosty007/movie_node_backend/main/src/data/videos/";
     const path = baseAddr + req.params.name;
-    
+
     const request = http.get(path, function (response) {
         res.writeHead(200, { "Content-Type": "video/mp4" });
         response.pipe(res);

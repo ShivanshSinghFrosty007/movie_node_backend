@@ -1,8 +1,9 @@
 const espress = require('express');
 const router = espress.Router();
 
-const { MongoClient, ObjectId } = require('mongodb');
-const client = new MongoClient("mongodb+srv://FrostyNodeApp:qwerty123@cluster0.cjsivdu.mongodb.net/?retryWrites=true&w=majority");
+const { MongoClient } = require('mongodb');
+const url = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.cjsivdu.mongodb.net/?retryWrites=true&w=majority`;
+const client = new MongoClient(url);
 
 const authenticate = require('../auth/authKey');
 const nodemailer = require('nodemailer');
@@ -13,8 +14,8 @@ dotenv.config();
 
 const crypto = require('crypto');
 
-const key = Buffer.from('mnbvcxzlkjhgfdsapoiuytrewqzxcvbn', 'utf8');
-const iv = Buffer.from('qwertyuiopasdfgh', 'utf8');
+const key = Buffer.from(process.env.ENCRYPTION_KEY, 'utf8');
+const iv = Buffer.from(process.env.ENCRYPTION_IV, 'utf8');
 
 function decrypt(text) {
     var data = Buffer.from(text, 'hex');
@@ -27,8 +28,8 @@ function decrypt(text) {
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'deamonking05042002@gmail.com',
-        pass: 'edqvtzcwnlwupcxd'
+        user: process.env.MAIL_USERNAME,
+        pass: process.env.MAIL_PASSWORD
     }
 });
 
@@ -71,7 +72,7 @@ router.post("/:key/mail", async function (req, res) {
     otp = Math.floor(1000 + Math.random() * 9000);
 
     var mailOptions = {
-        from: 'deamonking05042002@gmail.com',
+        from: process.env.MAIL_USERNAME,
         to: mail,
         subject: `OTP is ${otp}`,
         text: `OTP for Movie Node is ${otp}`
